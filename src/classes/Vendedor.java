@@ -5,8 +5,8 @@ public class Vendedor extends Pessoa{
     private int numeroDeVendas;
 
     public Vendedor(int id, int numVendas, String name){
-        id = identificador;
-        numVendas = numeroDeVendas;
+        identificador = id;
+        numeroDeVendas = numVendas;
         nome = name;
     }
     

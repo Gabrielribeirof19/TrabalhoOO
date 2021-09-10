@@ -30,4 +30,11 @@ public abstract class Pessoa {
         this.email = email;
     }
 
+    public Telefone getTelefone(){
+        return telefone;
+    }
+    
+    public void setTelefone(Telefone telefone){
+        this.telefone = telefone;
+    }
 }
