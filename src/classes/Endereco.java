@@ -9,24 +9,31 @@ public class Endereco{
     public int getCEP(){
         return CEP;
     }
+
     public void setCEP(int cep){
         this.CEP = cep;
     }
+
     public String getBairro(){
         return bairro;
     }
-    public void setBairoo(String Bairro){
+
+    public void setBairo(String Bairro){
         this.bairro = Bairro;
     }
+
     public String getComplemento(){
         return complemento;
-    } 
+    }
+
     public void setComplemento(String compl){
         this.complemento = compl;
     }
+
     public String getEndereco(){
         return endereco;
     }
+
     public void setEndereco(String end){
         this.endereco = end;
     }
