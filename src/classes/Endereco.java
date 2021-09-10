@@ -1,6 +1,4 @@
 package classes;
-import javax.print.DocFlavor.STRING;
-
 
 public class Endereco{
     private int CEP;

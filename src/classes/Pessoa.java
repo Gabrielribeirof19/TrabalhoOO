@@ -3,7 +3,7 @@ package classes;
 public abstract class Pessoa {
     protected String nome;
     protected String cpf;
-    protected Telefone telefone[];
+    protected Telefone telefone;
     protected String email;
     
     public String getNome(){
