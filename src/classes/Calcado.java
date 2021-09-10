@@ -1,6 +1,6 @@
 package classes;
 
-public class Calcados {
+public class Calcado {
 
     
 }
