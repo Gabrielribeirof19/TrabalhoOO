@@ -1,26 +1,21 @@
-package classes;
+package model;
 
-public class Casaco extends Produto{
+public class Inferior extends Produto{
     private String material;
-    private boolean ziper;
-    private boolean capuz;
-    private boolean bolso;
-    private String tamanhoString;
+    private String tipo;
 
-    public Casaco(String name, double price, String material, boolean ziper, boolean capuz, boolean bolso, String tamanhoString){
+    //Sobrecarga
+    public Inferior(String name, double price, String tipo, String material){
         nome = name;
         preco = price;
+        this.tipo = tipo;
         this.material = material;
-        this.ziper = ziper;
-        this.capuz = capuz;
-        this.bolso = bolso;
-        this.tamanhoString = tamanhoString;
     }
 
     public String toString(){
         return "Produto: " + nome;
     }
-    
+
     public String getMaterial(){
         return material;
     }
@@ -29,38 +24,14 @@ public class Casaco extends Produto{
         this.material = material;
     }
 
-    public boolean getZiper(){
-        return ziper;
+    public String getTipo(){
+        return tipo;
     }
 
-    public void setZiper(boolean ziper){
-        this.ziper = ziper;
+    public void setTipo(String tipo){
+        this.tipo = tipo;
     }
-
-    public boolean getCapuz(){
-        return capuz;
-    }
-
-    public void setCapuz(boolean capuz){
-        this.capuz = capuz;
-    }
-
-    public boolean getBolso(){
-        return bolso;
-    }
-
-    public void setBolso(boolean bolso){
-        this.bolso = bolso;
-    }
-
-    public String getTamanhoString(){
-        return tamanhoString;
-    }
-
-    public void setTamanhoString(String tamanhoString){
-        this.tamanhoString = tamanhoString;
-    }
-
+   
     public String getNome(){
         return nome;
     }
@@ -108,4 +79,6 @@ public class Casaco extends Produto{
     public void setEstoque(int estoque){
         this.estoque = estoque;
     }
+
+    
 }

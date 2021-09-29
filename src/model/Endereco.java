@@ -1,4 +1,4 @@
-package classes;
+package model;
 
 public class Endereco{
     private int CEP;

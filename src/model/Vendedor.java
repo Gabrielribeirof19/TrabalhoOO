@@ -1,4 +1,4 @@
-package classes;
+package model;
 
 public class Vendedor extends Pessoa{
     private int identificador;

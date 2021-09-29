@@ -1,4 +1,4 @@
-package classes;
+package model;
 
 public class Cliente extends Pessoa {
     private Endereco endereco;

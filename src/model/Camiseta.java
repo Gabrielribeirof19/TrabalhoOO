@@ -1,37 +1,45 @@
-package classes;
+package model;
 
-public class Inferior extends Produto{
-    private String material;
-    private String tipo;
+public class Camiseta extends Produto{
+    private boolean mangaLonga;
+    private String gola;
+    private String tamanhoString;
 
-    //Sobrecarga
-    public Inferior(String name, double price, String tipo, String material){
+    public Camiseta(String name, double price, String tamanhoString, String gola){
         nome = name;
         preco = price;
-        this.tipo = tipo;
-        this.material = material;
+        this.tamanhoString = tamanhoString;
+        this.gola = gola;
     }
-
+    
     public String toString(){
         return "Produto: " + nome;
     }
 
-    public String getMaterial(){
-        return material;
+    public String getTamanhoString(){
+        return tamanhoString;
     }
 
-    public void setMaterial(String material){
-        this.material = material;
+    public void setTamanhoString(String tamanhoString){
+        this.tamanhoString = tamanhoString;
     }
 
-    public String getTipo(){
-        return tipo;
+    public String getGola(){
+        return gola;
     }
 
-    public void setTipo(String tipo){
-        this.tipo = tipo;
+    public void setGola(String gola){
+        this.gola = gola;
     }
-   
+
+    public boolean getMangaLonga(){
+        return mangaLonga;
+    }
+
+    public void setMangaLonga(boolean mangaLonga){
+        this.mangaLonga = mangaLonga;
+    }
+
     public String getNome(){
         return nome;
     }
@@ -46,14 +54,6 @@ public class Inferior extends Produto{
 
     public void setPreco(double preco){
         this.preco = preco;
-    }
-
-    public int getTamanho(){
-        return tamanho;
-    }
-
-    public void setTamanho(int tamanho){
-        this.tamanho = tamanho;
     }
 
     public double getPorcentagem(){
@@ -79,6 +79,4 @@ public class Inferior extends Produto{
     public void setEstoque(int estoque){
         this.estoque = estoque;
     }
-
-    
 }

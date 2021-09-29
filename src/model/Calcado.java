@@ -1,4 +1,4 @@
-package classes;
+package model;
 
 public class Calcado extends Produto{
     private boolean canoLongo;
