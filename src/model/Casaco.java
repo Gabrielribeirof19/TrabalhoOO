@@ -6,8 +6,10 @@ public class Casaco extends Produto{
     private boolean capuz;
     private boolean bolso;
     private String tamanhoString;
+    private Casaco [] casaco = new Casaco[50];
+    private int qtdCasaco = 0;
 
-    public Casaco(String name, double price, String material, boolean ziper, boolean capuz, boolean bolso, String tamanhoString){
+    public Casaco(String name, double price, String material, boolean ziper, boolean capuz, boolean bolso, String tamanhoString, double porcentagemCash, String cor, int estoque){
         nome = name;
         preco = price;
         this.material = material;
@@ -15,6 +17,9 @@ public class Casaco extends Produto{
         this.capuz = capuz;
         this.bolso = bolso;
         this.tamanhoString = tamanhoString;
+        this.porcentagemCash = porcentagemCash;
+        this.cor = cor;
+        this.estoque = estoque;
     }
 
     public String toString(){

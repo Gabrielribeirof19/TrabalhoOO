@@ -4,12 +4,18 @@ public class Camiseta extends Produto{
     private boolean mangaLonga;
     private String gola;
     private String tamanhoString;
+    private Camiseta [] camiseta = new Camiseta[50];
+    private int qtdCamiseta = 0;
 
-    public Camiseta(String name, double price, String tamanhoString, String gola){
+    public Camiseta(String name, double price, String tamanhoString, String gola, double porcentagemCash, String cor, int estoque, boolean mangaLonga){
         nome = name;
         preco = price;
         this.tamanhoString = tamanhoString;
         this.gola = gola;
+        this.porcentagemCash = porcentagemCash;
+        this.cor = cor;
+        this.estoque = estoque;
+        this.mangaLonga = mangaLonga;
     }
     
     public String toString(){

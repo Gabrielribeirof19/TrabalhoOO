@@ -3,13 +3,19 @@ package model;
 public class Inferior extends Produto{
     private String material;
     private String tipo;
+    private Inferior [] inferior = new Inferior[50];
+    private int qtdInferior = 0;
 
     //Sobrecarga
-    public Inferior(String name, double price, String tipo, String material){
+    public Inferior(String name, double price, String tipo, String material, int tamanho, double porcentagemCash, String cor, int estoque){
         nome = name;
         preco = price;
         this.tipo = tipo;
         this.material = material;
+        this.tamanho = tamanho;
+        this.porcentagemCash = porcentagemCash;
+        this.cor = cor;
+        this.estoque = estoque;
     }
 
     public String toString(){

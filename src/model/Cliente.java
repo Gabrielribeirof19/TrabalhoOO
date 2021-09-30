@@ -3,10 +3,16 @@ package model;
 public class Cliente extends Pessoa {
     private Endereco endereco;
     private Double cashback;
+    private Cliente [] cliente = new Cliente[50];
+    private int qtdCliente = 0;
 
-    public Cliente(Endereco e, Double Cashback){
+    public Cliente(String nome, String cpf, Endereco e, Double Cashback, String email, Telefone telefone){
         endereco = e;
         cashback = Cashback;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.nome = nome;
     }
 
     public String toString(){

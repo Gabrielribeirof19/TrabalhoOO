@@ -3,11 +3,16 @@ package model;
 public class Vendedor extends Pessoa{
     private int identificador;
     private int numeroDeVendas;
+    private Vendedor [] vendedor = new Vendedor[50];
+    private int qtdVendedor = 0;
 
-    public Vendedor(int id, int numVendas, String name){
+    public Vendedor(int id, int numVendas, String name, String cpf, Telefone telefone, String email){
         identificador = id;
         numeroDeVendas = numVendas;
         nome = name;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
     }
     
     public String toString(){
