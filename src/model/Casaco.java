@@ -113,4 +113,20 @@ public class Casaco extends Produto{
     public void setEstoque(int estoque){
         this.estoque = estoque;
     }
+    public Casaco getCasaco(int i){
+        return this.casaco[i];
+    }
+
+    public void setCasaco(Casaco c, int i){
+        this.casaco[i] = c;
+    }
+
+    public void cadastrar(Casaco c, int[] i){
+        this.casaco[i[0]] = c;
+        
+    }
+
+    public void editar(Casaco c, int pos){
+        this.casaco[pos] = c;
+    }
 }

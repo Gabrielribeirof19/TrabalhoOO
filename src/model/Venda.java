@@ -70,4 +70,20 @@ public class Venda {
     public void setNomeCliente(String nomeCliente){
         this.nomeCliente = nomeCliente;
     }
+    public Venda getVenda(int i){
+        return this.venda[i];
+    }
+
+    public void setVenda(Venda v, int i){
+        this.venda[i] = v;
+    }
+
+    public void cadastrar(Venda v, int[] i){
+        this.venda[i[0]] = v;
+        
+    }
+
+    public void editar(Venda v, int pos){
+        this.venda[pos] = v;
+    }
 }

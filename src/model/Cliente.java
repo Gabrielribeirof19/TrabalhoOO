@@ -65,4 +65,18 @@ public class Cliente extends Pessoa {
     public void setTelefone(Telefone telefone){
         this.telefone = telefone;
     }
+    public Cliente getCliente(int i){
+        return this.cliente[i];
+    }
+    public void setCliente(Cliente c, int i){
+        this.cliente[i] = c;
+    }
+    public void cadastrar(Cliente c, int[] i){
+        this.cliente[i[0]] = c;
+        
+    }
+
+    public void editar(Cliente c, int pos){
+        this.cliente[pos] = c;
+    }
 }

@@ -36,6 +36,7 @@ public class ControllerCalcado {
     public boolean excluir(int i){
         if(i == qtdCalcado[0] - 1){
             calcado[i].setCalcado(null, i);
+            qtdCalcado[0]--;
             return true;
         }
         if(i >= 0 && i < qtdCalcado[0]){
@@ -44,6 +45,7 @@ public class ControllerCalcado {
             c = calcado[i+1].getCalcado(i+1);
             calcado[i].setCalcado(c, i);
             System.out.println("Excluiu");
+            qtdCalcado[0]--;
             return true;
         }
         

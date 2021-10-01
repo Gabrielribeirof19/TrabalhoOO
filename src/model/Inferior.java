@@ -85,6 +85,20 @@ public class Inferior extends Produto{
     public void setEstoque(int estoque){
         this.estoque = estoque;
     }
+    public Inferior getInferior(int i){
+        return this.inferior[i];
+    }
+    public void setInferior(Inferior c, int i){
+        this.inferior[i] = c;
+    }
+    public void cadastrar(Inferior c, int[] i){
+        this.inferior[i[0]] = c;
+        
+    }
+
+    public void editar(Inferior c, int pos){
+        this.inferior[pos] = c;
+    }
 
     
 }

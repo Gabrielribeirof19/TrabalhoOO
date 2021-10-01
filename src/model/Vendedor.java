@@ -66,4 +66,20 @@ public class Vendedor extends Pessoa{
     public void setNumVenda(int numeroDeVendas){
         this.numeroDeVendas = numeroDeVendas;
     }
+    public Vendedor getVendedor(int i){
+        return this.vendedor[i];
+    }
+
+    public void setVendedor(Vendedor v, int i){
+        this.vendedor[i] = v;
+    }
+
+    public void cadastrar(Vendedor v, int[] i){
+        this.vendedor[i[0]] = v;
+        
+    }
+
+    public void editar(Vendedor v, int pos){
+        this.vendedor[pos] = v;
+    }
 }

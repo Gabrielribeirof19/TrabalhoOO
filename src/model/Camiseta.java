@@ -4,8 +4,8 @@ public class Camiseta extends Produto{
     private boolean mangaLonga;
     private String gola;
     private String tamanhoString;
-    private Camiseta [] camiseta = new Camiseta[50];
-    private int qtdCamiseta = 0;
+    private Camiseta[] camiseta = new Camiseta[50];
+   
 
     public Camiseta(String name, double price, String tamanhoString, String gola, double porcentagemCash, String cor, int estoque, boolean mangaLonga){
         nome = name;
@@ -84,5 +84,19 @@ public class Camiseta extends Produto{
 
     public void setEstoque(int estoque){
         this.estoque = estoque;
+    }
+    public Camiseta getCamiseta(int i){
+        return this.camiseta[i];
+    }
+    public void setCamiseta(Camiseta c, int i){
+        this.camiseta[i] = c;
+    }
+    public void cadastrar(Camiseta c, int[] i){
+        this.camiseta[i[0]] = c;
+        
+    }
+
+    public void editar(Camiseta c, int pos){
+        this.camiseta[pos] = c;
     }
 }

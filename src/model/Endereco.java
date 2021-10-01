@@ -1,11 +1,19 @@
 package model;
 
+import javax.print.DocFlavor.STRING;
+
 public class Endereco{
     private int CEP;
     private String bairro;
     private String complemento;
     private String endereco;
 
+    public Endereco(int cep, String bairro, String complemento, String endereco){
+        this.CEP = cep;
+        this.bairro = bairro;
+        this.complemento = complemento;
+        this.endereco = endereco;
+    }
     public int getCEP(){
         return CEP;
     }
