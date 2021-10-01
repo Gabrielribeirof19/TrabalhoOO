@@ -4,7 +4,7 @@ public class Vendedor extends Pessoa{
     private int identificador;
     private int numeroDeVendas;
     private Vendedor [] vendedor = new Vendedor[50];
-    private int qtdVendedor = 0;
+    public int qtdVendedor = 0;
 
     public Vendedor(int id, int numVendas, String name, String cpf, Telefone telefone, String email){
         identificador = id;

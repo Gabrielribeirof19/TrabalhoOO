@@ -3,7 +3,7 @@ import model.*;
 
 public class ControllerCamiseta {
     private Camiseta [] camiseta = new Camiseta[50];
-    private int [] qtdCamiseta = new int [1];
+    public int [] qtdCamiseta = new int [1];
 
 
     public Camiseta getCamiseta(int i){
@@ -13,13 +13,14 @@ public class ControllerCamiseta {
         return this.qtdCamiseta[0];
     }
 
-    public void cadastro(String txt){
+    public boolean cadastro(String [] dados){
         Camiseta ca = new Camiseta("tie-dye", 25.0, "M", "polo", 10.0, "preta", 32, true);
         camiseta[qtdCamiseta[0]] = new Camiseta("tie-dye", 25.0, "M", "polo", 10.0, "preta", 32, true);
         camiseta[qtdCamiseta[0]].cadastrar(ca, qtdCamiseta);
         System.out.println(qtdCamiseta[0]);
         qtdCamiseta[0]++;
         System.out.println(qtdCamiseta[0]);
+        return true;
     }
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdCamiseta[0]){
@@ -36,12 +37,14 @@ public class ControllerCamiseta {
             qtdCamiseta[0]--;
             return true;
         }
-        if(i >= 0 && i < qtdCamiseta[0]){
-            Camiseta c;
-            camiseta[i].setCamiseta(null, i); 
-            c = camiseta[i+1].getCamiseta(i+1);
-            camiseta[i].setCamiseta(c, i);
-            System.out.println("Excluiu");
+         if(i >= 0 && i < qtdCamiseta[0]){
+            for(int j = i; j < qtdCamiseta[0]; j++){    
+                    Camiseta cami;
+                    camiseta[j].setCamiseta(null, j); 
+                    cami = camiseta[j+1].getCamiseta(j+1);
+                    camiseta[j].setCamiseta(cami, j);
+                    System.out.println("Excluiu");
+            }
             qtdCamiseta[0]--;
             return true;
         }

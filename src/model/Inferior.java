@@ -4,7 +4,7 @@ public class Inferior extends Produto{
     private String material;
     private String tipo;
     private Inferior [] inferior = new Inferior[50];
-    private int qtdInferior = 0;
+    public int qtdInferior = 0;
 
     //Sobrecarga
     public Inferior(String name, double price, String tipo, String material, int tamanho, double porcentagemCash, String cor, int estoque){
@@ -91,6 +91,7 @@ public class Inferior extends Produto{
     public void setInferior(Inferior c, int i){
         this.inferior[i] = c;
     }
+    
     public void cadastrar(Inferior c, int[] i){
         this.inferior[i[0]] = c;
         

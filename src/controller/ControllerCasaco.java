@@ -4,7 +4,7 @@ import model.Casaco;
 
 public class ControllerCasaco {
     private Casaco [] casaco = new Casaco[50];
-    private int [] qtdCasaco = new int[1];
+    public int [] qtdCasaco = new int[1];
 
     public Casaco getCasaco(int i){
         return this.casaco[i].getCasaco(i);
@@ -12,13 +12,14 @@ public class ControllerCasaco {
     public int getqtdCasaco(){
         return this.qtdCasaco[0];
     }
-    public void cadastro(String txt){
+    public boolean cadastro (String [] dados){
         Casaco ca = new Casaco("MOLETOM", 25.5, "algodao" , true, true, true, "M", 15.0, "azul", 30);
         casaco[qtdCasaco[0]] = new Casaco("MOLETOM", 25.5, "algodao" , true, true, true, "M", 15.0, "azul", 30);
         casaco[qtdCasaco[0]].cadastrar(ca, qtdCasaco);
         System.out.println(qtdCasaco[0]);
         qtdCasaco[0]++;
         System.out.println(qtdCasaco[0]);
+        return true;
     }
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdCasaco[0]){
@@ -36,11 +37,13 @@ public class ControllerCasaco {
             return true;
         }
         if(i >= 0 && i < qtdCasaco[0]){
-            Casaco c;
-            casaco[i].setCasaco(null, i); 
-            c = casaco[i+1].getCasaco(i+1);
-            casaco[i].setCasaco(c, i);
-            System.out.println("Excluiu");
+            for(int j = i; j < qtdCasaco[0]; j++){    
+                    Casaco c;
+                    casaco[j].setCasaco(null, i); 
+                    c = casaco[j+1].getCasaco(j+1);
+                    casaco[j].setCasaco(c, i);
+                    System.out.println("Excluiu");
+            }
             qtdCasaco[0]--;
             return true;
         }
