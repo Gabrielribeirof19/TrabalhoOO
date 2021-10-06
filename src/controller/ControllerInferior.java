@@ -10,12 +10,12 @@ public class ControllerInferior {
     public Inferior getiInferior(int i){
         return this.inferiors[i].getInferior(i);
     }
-    public int getqtdCamiseta(){
+    public int getQtdInferior(){
         return this.qtdInferior[0];
     }
 
     public boolean cadastro(String [] dados){
-        Inferior inf = new Inferior("Leg", 25.5, "moletom", "algodão", 36, 10.0, "preta", 25);
+        Inferior inf = new Inferior(dados[1], Double.parseDouble(dados[2]), dados[7], dados[8], Integer.parseInt(dados[3]), Double.parseDouble(dados[4]), dados[5], Integer.parseInt(dados[6]));
         inferiors[qtdInferior[0]] = new Inferior("Leg", 25.5, "moletom", "algodão", 36, 10.0, "preta", 25);
         inferiors[qtdInferior[0]].cadastrar(inf, qtdInferior);
         System.out.println(qtdInferior[0]);

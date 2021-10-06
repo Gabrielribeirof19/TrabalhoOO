@@ -111,7 +111,7 @@ public class ViewDetailVendedor implements ActionListener{
 		if(src == botaoSalvar) {
 			try {
 				boolean res = true;
-				if(opc == 1) //cadastro de novo Vendedor
+				if(opc == 1)
 					novoDado[0] = Integer.toString(vendedor.getQtdVendedor());
 
 				novoDado[1] = fieldNome.getText();

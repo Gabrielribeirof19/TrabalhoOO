@@ -10,7 +10,7 @@ public class ControllerVenda {
         return this.vendas[i].getVenda(i);
     }
 
-    public int getqtdVenda(){
+    public int getQtdVenda(){
         return this.qtdVenda[0];
     }
 

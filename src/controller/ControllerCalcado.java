@@ -15,7 +15,7 @@ public class ControllerCalcado {
     }
 
     public boolean cadastro(String [] dados ){
-        Calcado c = new Calcado("Nike shox", 33.4, 40, 4.5, "cor", 4, true, true);
+        Calcado c = new Calcado(dados[1], Double.parseDouble(dados[2]), Integer.parseInt(dados[3]), Double.parseDouble(dados[4]), dados[5], Integer.parseInt(dados[6]), Boolean.parseBoolean(dados[7]), Boolean.parseBoolean(dados[8]));
         calcado[qtdCalcado[0]] = new Calcado("Tenis1", 320, 43, 5.4, "Azul", 5, true, true);
         calcado[qtdCalcado[0]].cadastrar(c, qtdCalcado);
         System.out.println(qtdCalcado[0]);

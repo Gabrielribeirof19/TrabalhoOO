@@ -14,7 +14,7 @@ public class ControllerCamiseta {
     }
 
     public boolean cadastro(String [] dados){
-        Camiseta ca = new Camiseta("tie-dye", 25.0, "M", "polo", 10.0, "preta", 32, true);
+        Camiseta ca = new Camiseta(dados[1], Double.parseDouble(dados[2]), dados[3], dados[4], Double.parseDouble(dados[5]), dados[6], Integer.parseInt(dados[7]), Boolean.parseBoolean(dados[8]));
         camiseta[qtdCamiseta[0]] = new Camiseta("tie-dye", 25.0, "M", "polo", 10.0, "preta", 32, true);
         camiseta[qtdCamiseta[0]].cadastrar(ca, qtdCamiseta);
         System.out.println(qtdCamiseta[0]);

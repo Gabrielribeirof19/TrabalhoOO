@@ -9,11 +9,11 @@ public class ControllerCasaco {
     public Casaco getCasaco(int i){
         return this.casaco[i].getCasaco(i);
     }
-    public int getqtdCasaco(){
+    public int getQtdCasaco(){
         return this.qtdCasaco[0];
     }
     public boolean cadastro (String [] dados){
-        Casaco ca = new Casaco("MOLETOM", 25.5, "algodao" , true, true, true, "M", 15.0, "azul", 30);
+        Casaco ca = new Casaco(dados[1], Double.parseDouble(dados[2]), dados[10] , Boolean.parseBoolean(dados[8]), Boolean.parseBoolean(dados[7]), Boolean.parseBoolean(dados[9]), dados[3], Double.parseDouble(dados[4]), dados[5], Integer.parseInt(dados[6]));
         casaco[qtdCasaco[0]] = new Casaco("MOLETOM", 25.5, "algodao" , true, true, true, "M", 15.0, "azul", 30);
         casaco[qtdCasaco[0]].cadastrar(ca, qtdCasaco);
         System.out.println(qtdCasaco[0]);
