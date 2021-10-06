@@ -19,7 +19,7 @@ public class ViewInferior implements ActionListener, ListSelectionListener{
     public void mostrarDados(ControllerInferior inferiorC) {
     
         for(int i = 0; i < inf.qtdInferior[0]; i++){
-         ListaInferior[i] = new ControllerInferior().getiInferior(i).getNome();
+         ListaInferior[i] = inf.getiInferior(i).getNome();
         }
 
         ListaInferiorCadastrados = new JList<String> (ListaInferior);
@@ -60,8 +60,9 @@ public class ViewInferior implements ActionListener, ListSelectionListener{
 
         if (src == refreshInferior) {
             for(int i = 0; i < inf.qtdInferior[0]; i++){
-                ListaInferior[i] = new ControllerInferior().getiInferior(i).getNome();
+                ListaInferior[i] = inf.getiInferior(i).getNome();
             }
+            ListaInferiorCadastrados.setListData(ListaInferior);
             ListaInferiorCadastrados.updateUI();
         }
     }   

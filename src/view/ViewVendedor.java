@@ -13,13 +13,13 @@ public class ViewVendedor implements ActionListener, ListSelectionListener{
     private JButton cadastroVendedor;
     private JButton refreshVendedor;
  	private String[] ListaVendedor = new String[50];
-    private static ControllerVendedor v = new ControllerVendedor();
+    private static ControllerVendedor vendedor = new ControllerVendedor();
     JList<String> ListaVendedorCadastrados;
     
     public void mostrarDados(ControllerVendedor vendedorC) {
     
-        for(int i = 0; i < v.qtdVendedor[0]; i++){
-            ListaVendedor[i] = new ControllerVendedor().getvVendedor(i).getNome();
+        for(int i = 0; i < vendedor.qtdVendedor[0]; i++){
+            ListaVendedor[i] = vendedor.getvVendedor(i).getNome();
         }
 
         ListaVendedorCadastrados = new JList<String>(ListaVendedor);
@@ -55,20 +55,21 @@ public class ViewVendedor implements ActionListener, ListSelectionListener{
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if(src == cadastroVendedor){
-            new ViewDetailVendedor().cadastrar(1, v, this, 0);
+            new ViewDetailVendedor().cadastrar(1, vendedor, this, 0);
         }
 
         if (src == refreshVendedor) {
-            for(int i = 0; i < v.qtdVendedor[0]; i++){
-                ListaVendedor[i] = v.getvVendedor(i).getNome();
+            for(int i = 0; i < vendedor.qtdVendedor[0]; i++){
+                ListaVendedor[i] = vendedor.getvVendedor(i).getNome();
             }
+            ListaVendedorCadastrados.setListData(ListaVendedor);
             ListaVendedorCadastrados.updateUI();
         }
     }   
 
     public void valueChanged(ListSelectionEvent e) {
     	if(e.getValueIsAdjusting()) {
-            new ViewDetailVendedor().cadastrar(2, v, this, ListaVendedorCadastrados.getSelectedIndex());
+            new ViewDetailVendedor().cadastrar(2, vendedor, this, ListaVendedorCadastrados.getSelectedIndex());
     	}      
     }
 }

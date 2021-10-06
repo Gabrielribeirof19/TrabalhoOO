@@ -180,7 +180,4 @@ public class ViewDetailCalcado implements ActionListener{
     public void mensagemErroExclusao() {
         JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n ", null, JOptionPane.ERROR_MESSAGE);
     }
-
-    
-
 }

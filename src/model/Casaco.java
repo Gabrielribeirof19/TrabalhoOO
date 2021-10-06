@@ -7,7 +7,6 @@ public class Casaco extends Produto{
     private boolean bolso;
     private String tamanhoString;
     private Casaco [] casaco = new Casaco[50];
-    private int qtdCasaco = 0;
 
     public Casaco(String name, double price, String material, boolean ziper, boolean capuz, boolean bolso, String tamanhoString, double porcentagemCash, String cor, int estoque){
         nome = name;

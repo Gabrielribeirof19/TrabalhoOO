@@ -4,7 +4,6 @@ public class Cliente extends Pessoa {
     private Endereco endereco;
     private Double cashback;
     private Cliente [] cliente = new Cliente[50];
-    private int qtdCliente = 0;
 
     public Cliente(String nome, String cpf, Endereco e, Double Cashback, String email, Telefone telefone){
         endereco = e;

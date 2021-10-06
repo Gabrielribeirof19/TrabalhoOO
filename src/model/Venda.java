@@ -8,13 +8,11 @@ public class Venda {
     private int idVendedor;
     private String nomeCliente;
     private Venda [] venda = new Venda[50];
-    private int qtdVenda = 0;
 
     public Venda(String nomeCliente, int idVendedor, double preco, double cashBack, String nomeProduto, int idVenda){
         this.nomeCliente = nomeCliente;
         this.idVendedor = idVendedor;
         this.preco = preco;
-        this.cashBack = cashBack;
         this.nomeProduto = nomeProduto;
         this.idVenda = idVenda;
     }
@@ -80,7 +78,6 @@ public class Venda {
     }
 
     public void cadastrar(Venda v, int[] i){
-        this.venda[i[0]] = v;
-        
+        this.venda[i[0]] = v;    
     }
 }

@@ -65,8 +65,9 @@ public class ViewVenda implements ActionListener, ListSelectionListener{
 
 		if(src == refreshVenda) {
 			for(int i = 0; i < venda.qtdVenda[0]; i++){
-                listaVenda[i] = new ControllerVenda().getVenda(i).getNomeProduto();
-            }		
+                listaVenda[i] = venda.getVenda(i).getNomeProduto();
+            }
+            listaVendaCadastrados.setListData(listaVenda);		
 			listaVendaCadastrados.updateUI();
 		}
 

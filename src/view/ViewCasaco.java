@@ -12,15 +12,15 @@ public class ViewCasaco implements ActionListener, ListSelectionListener{
     private JButton cadastroCasaco;
     private JButton refreshCasaco;
     private String[] listaCasaco = new String[50];
-    private static ControllerCasaco ca = new ControllerCasaco();
+    private static ControllerCasaco casaco = new ControllerCasaco();
     JList <String> listaCasacoCadastrados;
 
 
 
 
     public void mostrarDados(ControllerCasaco casacoC) {
-        for(int i = 0; i < ca.qtdCasaco[0]; i++){
-            listaCasaco[i] = new ControllerCasaco().getCasaco(i).getNome();
+        for(int i = 0; i < casaco.qtdCasaco[0]; i++){
+            listaCasaco[i] = casaco.getCasaco(i).getNome();
         }
 
 
@@ -57,7 +57,7 @@ public class ViewCasaco implements ActionListener, ListSelectionListener{
 
 	public void valueChanged(ListSelectionEvent e) {
     	if(e.getValueIsAdjusting()) {
-            new ViewDetailCasaco().cadastrar(2, ca, this, listaCasacoCadastrados.getSelectedIndex());
+            new ViewDetailCasaco().cadastrar(2, casaco, this, listaCasacoCadastrados.getSelectedIndex());
     	}   
 		
 	}
@@ -65,13 +65,14 @@ public class ViewCasaco implements ActionListener, ListSelectionListener{
 	public void actionPerformed(ActionEvent e) {
 		  Object src = e.getSource();
         if(src == cadastroCasaco){
-            new ViewDetailCasaco().cadastrar(1, ca, this, 0);
+            new ViewDetailCasaco().cadastrar(1, casaco, this, 0);
         }
 
         if (src == refreshCasaco) {
-            for(int i = 0; i < ca.qtdCasaco[0]; i++){
-                listaCasaco[i] = new ControllerCasaco().getCasaco(i).getNome();
+            for(int i = 0; i < casaco.qtdCasaco[0]; i++){
+                listaCasaco[i] = casaco.getCasaco(i).getNome();
             }
+            listaCasacoCadastrados.setListData(listaCasaco);
             listaCasacoCadastrados.updateUI();
         }
 		

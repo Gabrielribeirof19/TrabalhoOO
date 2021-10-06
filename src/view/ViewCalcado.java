@@ -13,13 +13,13 @@ public class ViewCalcado implements ActionListener, ListSelectionListener{
     private JButton cadastroCalcado;
     private JButton refreshCalcado;
  	private String[] ListaCalcado = new String[50];
-    private static ControllerCalcado c = new ControllerCalcado();
+    private static ControllerCalcado calcado = new ControllerCalcado();
     private JList<String> ListaCalcadoCadastrados;
     
     public void mostrarDados(ControllerCalcado calcadoC) {
     
-        for(int i = 0; i < c.qtdCalcado[0]; i++){
-            ListaCalcado[i] = new ControllerCalcado().getCalcado(i).getNome();
+        for(int i = 0; i < calcado.qtdCalcado[0]; i++){
+            ListaCalcado[i] = calcado.getCalcado(i).getNome();
         }
 
         ListaCalcadoCadastrados = new JList<String>(ListaCalcado);
@@ -55,20 +55,22 @@ public class ViewCalcado implements ActionListener, ListSelectionListener{
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if(src == cadastroCalcado){
-            new ViewDetailCalcado().cadastrar(1, c, this, ListaCalcadoCadastrados.getSelectedIndex());
+            new ViewDetailCalcado().cadastrar(1, calcado, this, ListaCalcadoCadastrados.getSelectedIndex());
         }
 
         if (src == refreshCalcado) {
-            for(int i = 0; i < c.qtdCalcado[0]; i++){
-                ListaCalcado[i] = new ControllerCalcado().getCalcado(i).getNome();
+            for(int i = 0; i < calcado.qtdCalcado[0]; i++){
+                ListaCalcado[i] = calcado.getCalcado(i).getNome();
             }
+            ListaCalcadoCadastrados.setListData(ListaCalcado);
+
             ListaCalcadoCadastrados.updateUI();
         }
     }   
 
     public void valueChanged(ListSelectionEvent e) {
     	if(e.getValueIsAdjusting()) {
-            new ViewDetailCalcado().cadastrar(2, c, this, ListaCalcadoCadastrados.getSelectedIndex());
+            new ViewDetailCalcado().cadastrar(2, calcado, this, ListaCalcadoCadastrados.getSelectedIndex());
     	}      
     }
 }

@@ -5,6 +5,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 import controller.ControllerCliente;
 
+
 public class ViewCliente implements ActionListener, ListSelectionListener{
     private JFrame janela;
     private JLabel titulo;
@@ -17,7 +18,8 @@ public class ViewCliente implements ActionListener, ListSelectionListener{
     public void mostrarDados(ControllerCliente clienteC) {
 
         for(int i = 0; i < cliente.qtdCliente[0]; i++){
-            listaCliente[i] = new ControllerCliente().getCliente(i).getNome();
+            listaCliente[i] = cliente.getCliente(i).getNome();
+            System.out.println();
         }
         
         listaClienteCadastrados = new JList<String>(listaCliente);
@@ -65,9 +67,9 @@ public class ViewCliente implements ActionListener, ListSelectionListener{
                 System.out.println("VALOR QTDCLIENTE " + cliente.qtdCliente[0]);
                 listaCliente[i] = cliente.getCliente(i).getNome();
             }
+            listaClienteCadastrados.setListData(listaCliente);
             listaClienteCadastrados.updateUI();
         }
     }
-    
 }
 
