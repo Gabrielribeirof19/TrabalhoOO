@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Modelo do Vendedor, contém os dados da aplicação
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class Vendedor extends Pessoa{
     private int identificador;
     private int numeroDeVendas;
@@ -74,11 +80,21 @@ public class Vendedor extends Pessoa{
         this.vendedor[i] = v;
     }
 
+    /**
+     * Cadastra o objeto "v" na última posição
+     * @param v Objeto com os dados a serem cadastrados
+     * @param i Posição que irá receber o cadastro(Última)
+     */
     public void cadastrar(Vendedor v, int[] i){
         this.vendedor[i[0]] = v;
         
     }
 
+    /**
+     * Edita o objeto na posição "pos" com os dados de "v"
+     * @param v  Objetos com os dados que irão editar
+     * @param pos Posição que irá sofrer a edição
+     */
     public void editar(Vendedor v, int pos){
         this.vendedor[pos] = v;
     }

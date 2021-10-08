@@ -5,7 +5,12 @@ import java.awt.event.*;
 import javax.swing.*;
 import controller.*;
 
-
+/**
+ * Apresentar o menu na tela para o usuário
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 202)
+ */
 public class ViewMenu implements ActionListener {
 	
 	private static JFrame janela = new JFrame("Loja De Roupas");
@@ -105,7 +110,5 @@ public class ViewMenu implements ActionListener {
 			 System.exit(0);
 		
 	}
-	
-	
 
 }

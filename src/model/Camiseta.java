@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Modelo da Camiseta, contém os dados da aplicação
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class Camiseta extends Produto{
     private boolean mangaLonga;
     private String gola;
@@ -85,17 +91,30 @@ public class Camiseta extends Produto{
     public void setEstoque(int estoque){
         this.estoque = estoque;
     }
+
     public Camiseta getCamiseta(int i){
         return this.camiseta[i];
     }
+
     public void setCamiseta(Camiseta c, int i){
         this.camiseta[i] = c;
     }
+
+    /**
+     * Cadastra o objeto "c" na última posição
+     * @param c Objeto com os dados a serem cadastrados
+     * @param i Posição que irá receber o cadastro(Última)
+     */
     public void cadastrar(Camiseta c, int[] i){
         this.camiseta[i[0]] = c;
         
     }
 
+    /**
+     * Edita o objeto na posição "pos" com os dados de "c"
+     * @param c Objetos com os dados que irão editar
+     * @param pos Posição que irá sofrer a edição
+     */
     public void editar(Camiseta c, int pos){
         this.camiseta[pos] = c;
     }

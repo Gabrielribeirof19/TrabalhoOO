@@ -82,7 +82,7 @@ class Teste {
         dados[6] = "1";
         dados[7] = "3";
         vendedor.cadastro(dados);
-        
+		
         dadosVenda[1] = "Cliente";
         dadosVenda[2] = "Calcado";
         dadosVenda[3] = "1";

@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Modelo do Casaco, contém os dados da aplicação
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class Casaco extends Produto{
     private String material;
     private boolean ziper;
@@ -120,11 +126,21 @@ public class Casaco extends Produto{
         this.casaco[i] = c;
     }
 
+    /**
+     * Cadastra o objeto "c" na última posição
+     * @param c Objeto com os dados a serem cadastrados
+     * @param i Posição que irá receber o cadastro(Última)
+     */
     public void cadastrar(Casaco c, int[] i){
         this.casaco[i[0]] = c;
         
     }
 
+    /**
+     * Edita o objeto na posição "pos" com os dados de "c"
+     * @param c Objetos com os dados que irão editar
+     * @param pos Posição que irá sofrer a edição
+     */
     public void editar(Casaco c, int pos){
         this.casaco[pos] = c;
     }

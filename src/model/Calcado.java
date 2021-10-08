@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Modelo do Calcado, contém os dados da aplicação
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class Calcado extends Produto{
     private boolean canoLongo;
     private boolean cadarco;
@@ -99,10 +105,20 @@ public class Calcado extends Produto{
         this.calcado[i] = c;
     }
 
+    /**
+     * Cadastra o objeto "c" na última posição
+     * @param c Objeto com os dados a serem cadastrados
+     * @param i Posição que irá receber o cadastro(Última)
+     */
     public void cadastrar(Calcado c, int[] i){
         this.calcado[i[0]] = c;
     }
 
+    /**
+     * Edita o objeto na posição "pos" com os dados de "c"
+     * @param c Objetos com os dados que irão editar
+     * @param pos Posição que irá sofrer a edição
+     */
     public void editar(Calcado c, int pos){
         this.calcado[pos] = c;
     }

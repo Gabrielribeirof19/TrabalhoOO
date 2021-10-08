@@ -15,6 +15,12 @@ import controller.ControllerInferior;
 import controller.ControllerVenda;
 import controller.ControllerVendedor;
 
+/**
+ * Mostra os detalhes de cada objeto Venda na tela, chama os métodos de exclusão e cadastro
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class ViewDetailVenda implements ActionListener{
 
     private JFrame janela;

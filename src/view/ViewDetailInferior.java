@@ -9,6 +9,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+/**
+ * Mostra os detalhes de cada objeto Inferior na tela, chama os métodos de exclusão, cadastro e edição
+ * @author Cícero Fernandes 
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class ViewDetailInferior implements ActionListener {
     private JFrame janela;
     private JLabel labelNome = new JLabel("Nome: ");

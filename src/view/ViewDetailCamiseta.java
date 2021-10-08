@@ -8,6 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+/**
+ * Mostra os detalhes de cada objeto Camiseta na tela, chama os métodos de exclusão, cadastro e edição
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class ViewDetailCamiseta implements ActionListener {
     //nome preco tamanho gola Pcash cor estoque mangaLonga
     private JFrame janela;

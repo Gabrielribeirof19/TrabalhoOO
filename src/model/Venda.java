@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Modelo da Venda, contém os dados da aplicação
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class Venda {
     private String nomeProduto;
     private int idVenda;
@@ -78,6 +84,11 @@ public class Venda {
         this.venda[i] = v;
     }
 
+    /**
+     * Cadastra o objeto "v" na última posição
+     * @param v Objeto com os dados a serem cadastrados
+     * @param i Posição que irá receber o cadastro(Última)
+     */
     public void cadastrar(Venda v, int[] i){
         this.venda[i[0]] = v;    
     }

@@ -1,18 +1,51 @@
 package controller;
 import model.*;
 
+/**
+ * Trabalha os dados da classe Venda feita no model.
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class ControllerVenda {
     private Venda[] vendas = new Venda[50];
     public int[] qtdVenda = new int[1];
 
+    /**
+     * Carrega um dado do tipo Venda vindo do model Venda
+     * @param i Posição do objeto que você quer buscar
+     * @return Objeto do tipo Venda carregado do model
+     */
     public Venda getVenda(int i){
         return this.vendas[i].getVenda(i);
     }
 
+    /**
+     * Retorna a quantidade de Vendas cadastradas
+     * @return Quantidade de Venda cadastrado
+     */
     public int getQtdVenda(){
         return this.qtdVenda[0];
     }
 
+    /**
+     * Cadastra um objeto do tipo Venda no model.
+     * @param dados Lista de String contendo os dados para inicializar o objeto a ser cadastrado
+     * 
+     * @param cliente Cliente cadastrado carregado para que possa ser feito o filtro, e assim então, descobrir se o cliente a ser cadastrado na venda realmente existe
+     * 
+     * @param calcado Calcado cadastrado carregado para que possa ser feito o filtro, e assim então, descobrir se o calcado a ser cadastrado na venda realmente existe
+     * 
+     * @param inf Inferior cadastrado carregado para que possa ser feito o filtro, e assim então, descobrir se o inferior a ser cadastrado na venda realmente existe
+     * 
+     * @param casaco Casaco cadastrado carregado para que possa ser feito o filtro, e assim então, descobrir se o casaco a ser cadastrado na venda realmente existe
+     * 
+     * @param vendedor Vendedor cadastrado carregado para que possa ser feito o filtro, e assim então, descobrir se o vendedor a ser cadastrado na venda realmente existe
+     * 
+     * @param camiseta Camiseta cadastrada carregado para que possa ser feito o filtro, e assim então, descobrir se o camiseta a ser cadastrado na venda realmente existe
+     * 
+     * @return retorna verdadeiro ou falso, indicando se o cadastro foi feito com sucesso ou não
+     */
     public boolean cadastro(String [] dados, ControllerCliente cliente, ControllerCalcado calcado, ControllerInferior inf, ControllerCasaco casaco, ControllerVendedor vendedor, ControllerCamiseta camiseta){
         boolean flagCliente = false;
         boolean flagVendedor = false;
@@ -198,6 +231,11 @@ public class ControllerVenda {
 
     }
 
+    /**
+     * Exclui um objeto do tipo Venda na posição indicada. 
+     * @param i Posição a ser excluída 
+     * @return Retorna verdadeiro ou falso, indicando se a exclusão foi feita com sucesso ou não
+     */
     public boolean cancelar(int i){
         if(i == qtdVenda[0] - 1){
             vendas[i].setVenda(null, i);

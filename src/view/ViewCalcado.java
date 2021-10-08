@@ -6,7 +6,12 @@ import javax.swing.event.*;
 
 import controller.ControllerCalcado;
 
-
+/**
+ * Trabalha com os dados do calçado para que eles sejam apresentados na tela
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class ViewCalcado implements ActionListener, ListSelectionListener{
     private JFrame janela;
     private JLabel titulo;
@@ -17,6 +22,11 @@ public class ViewCalcado implements ActionListener, ListSelectionListener{
     private JList<String> ListaCalcadoCadastrados;
     private String[] dados = new String [11];
     
+    /**
+     * Mostrar os dados cadastrados no model Calcado e fazer ligação com outras views
+     * @param calcadoC Carrega os dados do Controller criado no menu
+     * @param flag  Carrega um inteiro para controlar o pré-cadastramento de dados no model 
+     */
     public void mostrarDados(ControllerCalcado calcadoC, int [] flag) {
         if(flag[0] == 0){
             for (int i = 0; i < 5; i++){

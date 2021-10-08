@@ -6,7 +6,12 @@ import javax.swing.event.*;
 
 import controller.ControllerVendedor;
 
-
+/**
+ * Trabalha com os dados do vendedor para que eles sejam apresentados na tela
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class ViewVendedor implements ActionListener, ListSelectionListener{
     private JFrame janela;
     private JLabel titulo;
@@ -16,6 +21,12 @@ public class ViewVendedor implements ActionListener, ListSelectionListener{
     static ControllerVendedor vendedor = new ControllerVendedor();
     JList<String> ListaVendedorCadastrados;
     private String [] dados = new String[11];
+
+    /**
+     * Mostrar os dados cadastrados no model Vendedor e fazer ligação com outras views
+     * @param vendedorC Carrega os dados do controller criado no menu
+     * @param flag Carrega um inteiro para controlar o pré-cadastramento de dados no model 
+     */
     public void mostrarDados(ControllerVendedor vendedorC, int [] flag) {
         if(flag[0] == 0){
             for (int i = 0; i < 5; i++){

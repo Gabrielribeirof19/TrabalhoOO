@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Modelo do Cliente, contém os dados da aplicação
+ * @author Cícero Fernandes
+ * @author Gabriel de Souza
+ * @version 1.0 (out 2021)
+ */
 public class Cliente extends Pessoa {
     private Endereco endereco;
     private Double cashback;
@@ -64,17 +70,30 @@ public class Cliente extends Pessoa {
     public void setTelefone(Telefone telefone){
         this.telefone = telefone;
     }
+
     public Cliente getCliente(int i){
         return this.cliente[i];
     }
+
     public void setCliente(Cliente c, int i){
         this.cliente[i] = c;
     }
+
+    /**
+     * Cadastra o objeto "c" na última posição
+     * @param c Objeto com os dados a serem cadastrados
+     * @param i Posição que irá receber o cadastro(Última)
+     */
     public void cadastrar(Cliente c, int[] i){
         this.cliente[i[0]] = c;
         
     }
 
+    /**
+     *  Edita o objeto na posição "pos" com os dados de "c"
+     * @param c Objetos com os dados que irão editar
+     * @param pos Posição que irá sofrer a edição
+     */
     public void editar(Cliente c, int pos){
         this.cliente[pos] = c;
     }
