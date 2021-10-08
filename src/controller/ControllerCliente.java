@@ -2,7 +2,7 @@ package controller;
 import model.*;
 
 /**
- * Trabalha os dados da classe Casado feita no model.
+ * Trabalha os dados da classe Cliente feita no model.
  * @author Cícero Fernandes
  * @author Gabriel de Souza
  * @version 1.0 (out 2021)
