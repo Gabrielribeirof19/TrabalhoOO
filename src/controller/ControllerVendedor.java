@@ -2,7 +2,7 @@ package controller;
 import model.*;
 
 /**
- * Trabalha os dados da classe Calcado feita no model.
+ * Trabalha os dados da classe vendedor feita no model.
  * @author Cícero Fernandes
  * @author Gabriel de Souza
  * @version 1.0 (out 2021)
@@ -60,7 +60,7 @@ public class ControllerVendedor {
     }
 
     /**
-     * Exclui um objeto do tipo Calcado na posição indicada.
+     * Exclui um objeto do tipo Vendedor na posição indicada.
      * @param i Posição a ser excluída
      * @return Retorna verdadeiro ou falso, indicando se a exclusão foi feita com sucesso ou não
      */

@@ -62,7 +62,7 @@ public class ControllerCasaco {
     }
 
     /**
-     * Exclui um objeto do tipo Calcado na posição indicada.
+     * Exclui um objeto do tipo Casaco na posição indicada.
      * @param i Posição a ser excluída 
      * @return Retorna verdadeiro ou falso, indicando se a exclusão foi feita com sucesso ou não
      */

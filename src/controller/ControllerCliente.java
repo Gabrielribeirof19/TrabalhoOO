@@ -2,7 +2,7 @@ package controller;
 import model.*;
 
 /**
- * Trabalha os dados da classe Calcado feita no model.
+ * Trabalha os dados da classe Casado feita no model.
  * @author Cícero Fernandes
  * @author Gabriel de Souza
  * @version 1.0 (out 2021)
@@ -44,7 +44,7 @@ public class ControllerCliente {
     }
 
     /**
-     * Editar um objeto do tipo Calcado no model.
+     * Editar um objeto do tipo Casado no model.
      * @param dados Lista de String contendo os dados para editar o objeto cadastrado
      * @param pos Posição do objeto na model que será editado.
      * @return retorna verdadeiro ou falso, indicando se a edição foi feita com sucesso ou não
