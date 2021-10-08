@@ -63,7 +63,7 @@ public class ViewDetailInferior implements ActionListener {
             fieldEstoque = new JTextField(200);
             fieldTipo = new JTextField(200);
             fieldMaterial = new JTextField(200);
-            botaoSalvar.setBounds(245, 240, 115, 30);
+            botaoSalvar.setBounds(245, 250, 115, 30);
         }
 
         labelNome.setBounds(30, 20, 150, 25);
@@ -85,8 +85,8 @@ public class ViewDetailInferior implements ActionListener {
 
         
         if(opc == 2){
-            botaoSalvar.setBounds(120, 240, 115, 30);
-			botaoExcluir.setBounds(245, 240, 115, 30);
+            botaoSalvar.setBounds(120, 250, 115, 30);
+			botaoExcluir.setBounds(245, 250, 115, 30);
 			this.janela.add(botaoExcluir);
         }
 
@@ -123,7 +123,7 @@ public class ViewDetailInferior implements ActionListener {
 		if(src == botaoSalvar) {
 			try {
 				boolean res = true;
-				
+				System.out.println("OPC: "+ opc);
                 novoDado[0] = Integer.toString(inferior.getQtdInferior());
 				novoDado[1] = fieldNome.getText();
 				novoDado[2] = fieldPreco.getText();
@@ -134,9 +134,12 @@ public class ViewDetailInferior implements ActionListener {
                 novoDado[7] = fieldTipo.getText();
                 novoDado[8] = fieldMaterial.getText();
 
-
-                res = inferior.cadastro(novoDado);
-				if(res) {
+                if(opc == 2){
+                    res = inferior.editar(novoDado, posi);
+                }else{
+                    res = inferior.cadastro(novoDado);
+                }				
+                if(res) {
 					mensagemSucessoCadastro();
 				}
 				else mensagemErroCadastro();
@@ -151,7 +154,7 @@ public class ViewDetailInferior implements ActionListener {
 			boolean res = false;
 				res = inferior.excluir(posi);
 				if (res) mensagemSucessoExclusao(); 
-				else mensagemErroExclusaoVendedor(); 
+				else mensagemErroExclusaoInferior(); 
 			
 		}
     }
@@ -168,18 +171,11 @@ public class ViewDetailInferior implements ActionListener {
     }
 
     public void mensagemErroCadastro() {
-        JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
-                + "Pode ter ocorrido um dos dois erros a seguir:  \n"
-                + "1. Nem todos os campos foram preenchidos \n"
-                + "2. CPF, identidade, DDD e telefone não contém apenas números", null, 
+        JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n ", null, 
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public void mensagemErroExclusaoCliente() {
-        JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n ", null, JOptionPane.ERROR_MESSAGE);
-    }
-    
-    public void mensagemErroExclusaoVendedor() {
+    public void mensagemErroExclusaoInferior() {
         JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n ", null, JOptionPane.ERROR_MESSAGE);
     }
 

@@ -1,5 +1,4 @@
 package view;
-
 import controller.ControllerCamiseta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,27 +62,28 @@ public class ViewDetailCamiseta implements ActionListener {
             fieldPCash = new JTextField(200);
             fieldCor = new JTextField(200);
             fieldEstoque = new JTextField(200);
-            botaoSalvar.setBounds(245,280, 115, 30);
+            botaoSalvar.setBounds(245,240, 115, 30);
         }
             labelNome.setBounds(30, 20, 150, 25);
             fieldNome.setBounds(180, 20, 180, 25);
             labelPreco.setBounds(30, 50, 150, 25);
             fieldPreco.setBounds(180, 50, 180, 25);	
             labelGola.setBounds(30, 70, 150, 25);
-            fieldGola.setBounds(180, 70, 28, 25);
+            fieldGola.setBounds(180, 70, 180, 25);
             labelManga.setBounds(30, 100, 150, 25);
-            fieldManga.setBounds(210, 100, 65, 25);
-            labelPCash.setBounds(30, 190, 150, 25);
-            fieldPCash.setBounds(180, 190, 180, 25);
-            labelCor.setBounds(30, 220, 150, 25);
-            fieldCor.setBounds(180, 220, 180, 25);
-            labelEstoque.setBounds(30, 250, 150, 25);
-            fieldEstoque.setBounds(180, 250, 180, 25);
-            labelTamanho.setBounds(30, 280, 150, 25);
-            fieldTamanho.setBounds(180, 280, 180, 25);
+            fieldManga.setBounds(180, 100, 180, 25);
+            labelPCash.setBounds(30, 130, 150, 25);
+            fieldPCash.setBounds(180, 130, 180, 25);
+            labelCor.setBounds(30, 160, 150, 25);
+            fieldCor.setBounds(180, 160, 180, 25);
+            labelEstoque.setBounds(30, 190, 150, 25);
+            fieldEstoque.setBounds(180, 190, 180, 25);
+            labelTamanho.setBounds(30, 220, 150, 25);
+            fieldTamanho.setBounds(180, 220, 180, 25);
+
         if(opc == 2){
-            botaoSalvar.setBounds(120, 300, 115, 30);
-			botaoExcluir.setBounds(245, 300, 115, 30);
+            botaoSalvar.setBounds(120, 240, 115, 30);
+			botaoExcluir.setBounds(245, 240, 115, 30);
 			this.janela.add(botaoExcluir);
         }
 
@@ -121,7 +121,7 @@ public class ViewDetailCamiseta implements ActionListener {
 			try {
 				boolean res = true;
 
-                novoDado[0] = Integer.toString(camiseta.getqtdCamiseta());
+                novoDado[0] = Integer.toString(camiseta.getQtdCamiseta());
 				novoDado[1] = fieldNome.getText();
 				novoDado[2] = fieldPreco.getText();
 				novoDado[3] = fieldTamanho.getText();
@@ -132,7 +132,11 @@ public class ViewDetailCamiseta implements ActionListener {
                 novoDado[8] = fieldManga.getText();
                
                 
-                res = camiseta.cadastro(novoDado);
+                if(opc == 2){
+                    res = camiseta.editar(novoDado, posi);
+                }else{
+                    res = camiseta.cadastro(novoDado);
+                }
 				if(res) {
 					mensagemSucessoCadastro();
 				}

@@ -9,7 +9,7 @@ public class ControllerCamiseta {
     public Camiseta getCamiseta(int i){
         return this.camiseta[i].getCamiseta(i);
     }
-    public int getqtdCamiseta(){
+    public int getQtdCamiseta(){
         return this.qtdCamiseta[0];
     }
 
@@ -22,15 +22,17 @@ public class ControllerCamiseta {
         System.out.println(qtdCamiseta[0]);
         return true;
     }
+    
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdCamiseta[0]){
-            Camiseta ca = new Camiseta("tie-dye", 25.0, "M", "polo", 10.0, "preta", 32, true);
-            camiseta[this.qtdCamiseta[0]] = new Camiseta("tie-dye", 25.0, "M", "polo", 10.0, "preta", 32, true);
-            camiseta[this.qtdCamiseta[0]].editar(ca, pos);
+            Camiseta ca = new Camiseta(dados[1], Double.parseDouble(dados[2]), dados[3], dados[4], Double.parseDouble(dados[5]), dados[6], Integer.parseInt(dados[7]), Boolean.parseBoolean(dados[8]));
+            camiseta[pos] = new Camiseta("tie-dye", 25.0, "M", "polo", 10.0, "preta", 32, true);
+            camiseta[pos].editar(ca, pos);
             return true;
         }
         return false;
     }
+
     public boolean excluir(int i){
         if(i == qtdCamiseta[0] - 1){
             camiseta[i].setCamiseta(null, i);

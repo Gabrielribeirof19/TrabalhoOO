@@ -23,9 +23,9 @@ public class ControllerCasaco {
     }
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdCasaco[0]){
-            Casaco ca = new Casaco("MOLETOM", 25.5, "algodao" , true, true, true, "M", 15.0, "azul", 30);
-            casaco[this.qtdCasaco[0]] = new Casaco("MOLETOM", 25.5, "algodao" , true, true, true, "M", 15.0, "azul", 30);
-            casaco[this.qtdCasaco[0]].editar(ca, pos);
+            Casaco ca = new Casaco(dados[1], Double.parseDouble(dados[2]), dados[10] , Boolean.parseBoolean(dados[8]), Boolean.parseBoolean(dados[7]), Boolean.parseBoolean(dados[9]), dados[3], Double.parseDouble(dados[4]), dados[5], Integer.parseInt(dados[6]));
+            casaco[pos] = new Casaco("MOLETOM", 25.5, "algodao" , true, true, true, "M", 15.0, "azul", 30);
+            casaco[pos].editar(ca, pos);
             return true;
         }
         return false;

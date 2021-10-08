@@ -28,6 +28,8 @@ public class ViewDetailCliente implements ActionListener{
     private JTextField fieldComplemento;
     private JLabel labelEndereco = new JLabel("Endereço: ");
     private JTextField fieldEndereco;
+    private JLabel labelCashBack = new JLabel("Cash back: ");
+    private JTextField fieldCashBack;
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 	private String[] novoDado = new String[11];
@@ -55,7 +57,7 @@ public class ViewDetailCliente implements ActionListener{
             fieldCEP = new JTextField(String.valueOf(cliente.getCliente(posi).getEndereco().getCEP()), 200);
             fieldComplemento = new JTextField((cliente.getCliente(posi).getEndereco().getComplemento()), 200);
             fieldBairro = new JTextField((cliente.getCliente(posi).getEndereco().getBairro()), 200);
-
+            fieldCashBack = new JTextField(String.valueOf(cliente.getCliente(posi).getCasback()),200);
         }else{
             fieldNome = new JTextField(200);
             fieldCpf = new JTextField(200);
@@ -66,7 +68,8 @@ public class ViewDetailCliente implements ActionListener{
             fieldCEP = new JTextField(200);
             fieldComplemento = new JTextField(200);
             fieldBairro = new JTextField(200);
-            botaoSalvar.setBounds(245, 270, 115, 30);
+            fieldCashBack = new JTextField(200);
+            botaoSalvar.setBounds(245, 290, 115, 30);
         }
 
         labelNome.setBounds(30, 20, 150, 25);
@@ -86,10 +89,12 @@ public class ViewDetailCliente implements ActionListener{
         fieldBairro.setBounds(180, 200, 180, 25);
         labelComplemento.setBounds(30, 230, 150, 25);
         fieldComplemento.setBounds(180, 230, 180, 25);
+        labelCashBack.setBounds(30, 260, 150, 25);
+        fieldCashBack.setBounds(180, 260, 180, 25);
         
         if(opc == 2){
-            botaoSalvar.setBounds(120, 270, 115, 30);
-			botaoExcluir.setBounds(245, 270, 115, 30);
+            botaoSalvar.setBounds(120, 290, 115, 30);
+			botaoExcluir.setBounds(245, 290, 115, 30);
 			this.janela.add(botaoExcluir);
         }
 
@@ -111,6 +116,8 @@ public class ViewDetailCliente implements ActionListener{
 		this.janela.add(fieldBairro);
         this.janela.add(labelComplemento);
 		this.janela.add(fieldComplemento);
+        this.janela.add(labelCashBack);
+        this.janela.add(fieldCashBack);
 
 		this.janela.setLayout(null);
 
@@ -139,8 +146,13 @@ public class ViewDetailCliente implements ActionListener{
                 novoDado[7] = fieldCEP.getText();
                 novoDado[8] = fieldBairro.getText();
                 novoDado[9] = fieldComplemento.getText();
+                novoDado[10] = fieldCashBack.getText();
                 
-                res = cliente.cadastro(novoDado);
+                if(opc == 2){
+                    res = cliente.editar(novoDado, posi);
+                }else{
+                    res = cliente.cadastro(novoDado);
+                }
 				if(res) {
 					mensagemSucessoCadastro();
 				}

@@ -17,7 +17,7 @@ public class ViewDetailCalcado implements ActionListener{
     private JTextField fieldPreco;
     private JLabel labelTamanho = new JLabel("Tamanho: ");
     private JTextField fieldTamanho;
-    private JLabel labelPorcentagemCash = new JLabel("Porcentagem de Cash: ");
+    private JLabel labelPorcentagemCash = new JLabel("Porcentagem Cash: ");
     private JTextField fieldPorcentagemCash;
     private JLabel labelCor = new JLabel("Cor: ");
     private JTextField fieldCor;
@@ -63,7 +63,7 @@ public class ViewDetailCalcado implements ActionListener{
             fieldEstoque = new JTextField(200);
             fieldCanoLongo = new JTextField(200);
             fieldCadarco = new JTextField(200);
-            botaoSalvar.setBounds(245, 240, 115, 30);
+            botaoSalvar.setBounds(245, 250, 115, 30);
         }
 
         labelNome.setBounds(30, 20, 150, 25);
@@ -72,21 +72,21 @@ public class ViewDetailCalcado implements ActionListener{
 		fieldPreco.setBounds(180, 50, 180, 25);	
 		labelTamanho.setBounds(30, 70, 150, 25);
 		fieldTamanho.setBounds(180, 70, 180, 25);
-        labelPorcentagemCash.setBounds(30, 100, 150, 25);
+        labelPorcentagemCash.setBounds(30, 100, 170, 25);
         fieldPorcentagemCash.setBounds(180, 100, 180, 25);
         labelCor.setBounds(30, 130, 150, 25);
         fieldCor.setBounds(180, 130, 180, 25);
         labelEstoque.setBounds(30, 160, 150, 25);
         fieldEstoque.setBounds(180, 160, 180, 25);
-        labelCanoLongo.setBounds(30, 190, 150, 25);
-        fieldCanoLongo.setBounds(180, 190, 180, 25);
-        labelCadarco.setBounds(30, 220, 150, 25);
-        fieldCadarco.setBounds(180, 220, 180, 25);
+        labelCanoLongo.setBounds(30, 190, 180, 25);
+        fieldCanoLongo.setBounds(200, 190, 180, 25);
+        labelCadarco.setBounds(30, 220, 180, 25);
+        fieldCadarco.setBounds(190, 220, 180, 25);
 
         
         if(opc == 2){
-            botaoSalvar.setBounds(120, 240, 115, 30);
-			botaoExcluir.setBounds(245, 240, 115, 30);
+            botaoSalvar.setBounds(120, 250, 115, 30);
+			botaoExcluir.setBounds(245, 250, 115, 30);
 			this.janela.add(botaoExcluir);
         }
 
@@ -136,7 +136,11 @@ public class ViewDetailCalcado implements ActionListener{
                 novoDado[8] = fieldCadarco.getText();
 
 
-                res = calcado.cadastro(novoDado);
+                if(opc == 2){
+                    res = calcado.editar(novoDado, posi);
+                }else{
+                    res = calcado.cadastro(novoDado);
+                }
 				if(res) {
 					mensagemSucessoCadastro();
 				}

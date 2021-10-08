@@ -11,12 +11,28 @@ public class ViewCliente implements ActionListener, ListSelectionListener{
     private JLabel titulo;
     private JButton cadastroCliente;
     private JButton refreshCliente;
-    private static ControllerCliente cliente = new ControllerCliente();
+    static ControllerCliente cliente = new ControllerCliente();
     private JList<String> listaClienteCadastrados;
     private String[] listaCliente = new String[50];
+    private String [] dados = new String[11];
 
-    public void mostrarDados(ControllerCliente clienteC) {
-
+    public void mostrarDados(ControllerCliente clienteC, int [] flag) {
+        if(flag[0] == 0){
+            for (int i = 0; i < 5; i++){
+                dados[1] = "Cliente"+i;
+                dados[2] = "06732848159";
+                dados[3] = i+"email@email.com";
+                dados[4] = "061";
+                dados[5] = "999999999";
+                dados[6] = "End"+i;
+                dados[7] = "42942134";
+                dados[8] = "End"+i;
+                dados[9] = "End"+i;
+                dados[10] = "4."+i;
+                cliente.cadastro(dados);
+            }
+            flag[0]++;
+        }
         for(int i = 0; i < cliente.qtdCliente[0]; i++){
             listaCliente[i] = cliente.getCliente(i).getNome();
             System.out.println();
@@ -49,6 +65,7 @@ public class ViewCliente implements ActionListener, ListSelectionListener{
         refreshCliente.addActionListener(this);
         listaClienteCadastrados.addListSelectionListener(this);
     }
+
     public void valueChanged(ListSelectionEvent e) {
 
         if(e.getValueIsAdjusting()) {

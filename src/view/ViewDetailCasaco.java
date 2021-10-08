@@ -10,7 +10,6 @@ import javax.swing.JTextField;
 import controller.ControllerCasaco;
 
 public class ViewDetailCasaco implements ActionListener{
-    //name price material ziper capuz bolso tamanho  Pcash cor estoque
     private JFrame janela;
     private JLabel labelNome = new JLabel("Nome: ");
     private JTextField fieldNome;
@@ -81,9 +80,9 @@ public class ViewDetailCasaco implements ActionListener{
             labelPreco.setBounds(30, 50, 150, 25);
             fieldPreco.setBounds(180, 50, 180, 25);	
             labelMaterial.setBounds(30, 70, 150, 25);
-            fieldMaterial.setBounds(180, 70, 28, 25);
+            fieldMaterial.setBounds(180, 70, 180, 25);
             labelZiper.setBounds(30, 100, 150, 25);
-            fieldZiper.setBounds(210, 100, 65, 25);
+            fieldZiper.setBounds(180, 100, 180, 25);
             labelCapuz.setBounds(30, 130, 150, 25);
             fieldCapuz.setBounds(180, 130, 180, 25);
             labelBolso.setBounds(30, 160, 150, 25);
@@ -153,7 +152,11 @@ public class ViewDetailCasaco implements ActionListener{
                 novoDado[9] = fieldBolso.getText();
                 novoDado[10] = fieldMaterial.getText();
 
-                res = casaco.cadastro(novoDado);
+                if(opc == 2){
+                    res = casaco.editar(novoDado, posi);
+                }else{
+                    res = casaco.cadastro(novoDado);
+                }
 				if(res) {
 					mensagemSucessoCadastro();
 				}

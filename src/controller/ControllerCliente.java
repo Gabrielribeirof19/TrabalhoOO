@@ -14,7 +14,7 @@ public class ControllerCliente {
     }
 
     public boolean cadastro(String[] dados){
-        Cliente c = new Cliente(dados[1], dados[2], new Endereco(Integer.parseInt(dados[7]), dados[8], dados[9], dados[6]), 4.5, dados[3], new Telefone(dados[4], dados[5]));
+        Cliente c = new Cliente(dados[1], dados[2], new Endereco(Integer.parseInt(dados[7]), dados[8], dados[9], dados[6]), Double.parseDouble(dados[10]), dados[3], new Telefone(dados[4], dados[5]));
         cliente[qtdCliente[0]] = new Cliente("Cicero", "687684313", new Endereco(256456, "bairro", "complemento", "endereco"), 25.80, "cicero@gmail.com", new Telefone("61", "902389089"));
         cliente[qtdCliente[0]].cadastrar(c, qtdCliente);
         System.out.println(qtdCliente[0]);
@@ -25,9 +25,9 @@ public class ControllerCliente {
 
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdCliente[0]){
-            Cliente c = new Cliente("Cicero", "687684313", new Endereco(256456, "bairro", "complemento", "endereco"), 25.80, "cicero@gmail.com", new Telefone("61", "902389089"));
-            cliente[this.qtdCliente[0]] = new Cliente("Cicero", "687684313", new Endereco(256456, "bairro", "complemento", "endereco"), 25.80, "cicero@gmail.com", new Telefone("61", "902389089"));
-            cliente[this.qtdCliente[0]].editar(c, pos);
+            Cliente c = new Cliente(dados[1], dados[2], new Endereco(Integer.parseInt(dados[7]), dados[8], dados[9], dados[6]), Double.parseDouble(dados[10]), dados[3], new Telefone(dados[4], dados[5]));
+            cliente[pos] = new Cliente("Cicero", "687684313", new Endereco(256456, "bairro", "complemento", "endereco"), 25.80, "cicero@gmail.com", new Telefone("61", "902389089"));
+            cliente[pos].editar(c, pos);
             return true;
         }
         return false;

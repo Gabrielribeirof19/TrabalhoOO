@@ -12,13 +12,30 @@ public class ViewCasaco implements ActionListener, ListSelectionListener{
     private JButton cadastroCasaco;
     private JButton refreshCasaco;
     private String[] listaCasaco = new String[50];
-    private static ControllerCasaco casaco = new ControllerCasaco();
+    static ControllerCasaco casaco = new ControllerCasaco();
     JList <String> listaCasacoCadastrados;
+    private String [] dados = new String[11];
 
 
 
 
-    public void mostrarDados(ControllerCasaco casacoC) {
+    public void mostrarDados(ControllerCasaco casacoC, int [] flag) {
+        if(flag[0] == 0){
+            for (int i = 0; i < 5; i++){
+                dados[1] = "Casaco"+i;
+                dados[2] = "23"+i;
+                dados[3] = "M";
+                dados[4] = "4."+i;
+                dados[5] = "azul";
+                dados[6] = ""+i;
+                dados[7] = "true";
+                dados[8] = "true";
+                dados[9] = "true";
+                dados[10] = "Couro";
+                casaco.cadastro(dados);
+            }
+            flag[0]++;
+        }
         for(int i = 0; i < casaco.qtdCasaco[0]; i++){
             listaCasaco[i] = casaco.getCasaco(i).getNome();
         }

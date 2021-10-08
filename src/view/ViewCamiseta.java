@@ -12,12 +12,27 @@ public class ViewCamiseta implements ActionListener, ListSelectionListener{
     private JButton cadastroCamiseta;
     private JButton refreshCamiseta;
     private String[] listaCamiseta = new String[50];
-    private static ControllerCamiseta camiseta= new ControllerCamiseta();
+    static ControllerCamiseta camiseta= new ControllerCamiseta();
     private JList <String> listaCamisetaCadastrados;
+    private String [] dados = new String[11];
 
 
 
-    public void mostrarDados(ControllerCamiseta camisetaC) {
+    public void mostrarDados(ControllerCamiseta camisetaC, int [] flag) {
+        if(flag[0] == 0){
+            for (int i = 0; i < 5; i++){
+                dados[1] = "Camiseta"+i;
+                dados[2] = "23"+i;
+                dados[3] = "M";
+                dados[4] = "Polo";
+                dados[5] = "3"+i;
+                dados[6] = "Azul";
+                dados[7] = ""+i;
+                dados[8] = "true";
+                camiseta.cadastro(dados);
+            }
+            flag[0]++;
+        }
         for(int i = 0; i < camiseta.qtdCamiseta[0]; i++){
             listaCamiseta[i] =  camiseta.getCamiseta(i).getNome();
         }

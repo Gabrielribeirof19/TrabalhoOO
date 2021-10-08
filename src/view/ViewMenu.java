@@ -25,6 +25,13 @@ public class ViewMenu implements ActionListener {
     public static ControllerCliente clienteC = new ControllerCliente();
     public static ControllerVendedor vendedorV = new ControllerVendedor();
     public static ControllerVenda vendaV = new ControllerVenda();
+	public int [] flag1 = new int[1];
+	public int [] flag2 = new int[1];
+	public int [] flag3 = new int[1];
+	public int [] flag4 = new int[1];
+	public int [] flag5 = new int[1];
+	public int [] flag6 = new int[1];
+
 
 	public ViewMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -74,22 +81,22 @@ public class ViewMenu implements ActionListener {
         Object src = e.getSource();
 		
 		if(src == calcado)
-			new ViewCalcado().mostrarDados(calcadoC);
+			new ViewCalcado().mostrarDados(calcadoC, flag1);
 		
 		if(src == camiseta)
-			new ViewCamiseta().mostrarDados(camisetaC);
+			new ViewCamiseta().mostrarDados(camisetaC, flag2);
 		
 		if(src == casaco)
-			new ViewCasaco().mostrarDados(casacoC);
+			new ViewCasaco().mostrarDados(casacoC, flag3);
 		
 		if(src == inferior)
-			new ViewInferior().mostrarDados(inferiorI);
+			new ViewInferior().mostrarDados(inferiorI, flag4);
 		
 		if(src == cliente)
-			new ViewCliente().mostrarDados(clienteC);
+			new ViewCliente().mostrarDados(clienteC, flag5);
 		
 		if(src == vendedor)
-			new ViewVendedor().mostrarDados(vendedorV);
+			new ViewVendedor().mostrarDados(vendedorV, flag6);
 		
 		if(src == venda)
 			new ViewVenda().mostrarDados(vendaV);

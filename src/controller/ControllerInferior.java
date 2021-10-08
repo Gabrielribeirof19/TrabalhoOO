@@ -23,15 +23,17 @@ public class ControllerInferior {
         System.out.println(qtdInferior[0]);
         return true;
     }
+
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdInferior[0]){
-            Inferior inf = new Inferior("Leg", 25.5, "moletom", "algodão", 36, 10.0, "preta", 25);
-            inferiors[this.qtdInferior[0]] = new Inferior("Leg", 25.5, "moletom", "algodão", 36, 10.0, "preta", 25);
-            inferiors[this.qtdInferior[0]].editar(inf, pos);
+            Inferior inf = new Inferior(dados[1], Double.parseDouble(dados[2]), dados[7], dados[8], Integer.parseInt(dados[3]), Double.parseDouble(dados[4]), dados[5], Integer.parseInt(dados[6]));
+            inferiors[pos] = new Inferior("Leg", 25.5, "moletom", "algodão", 36, 10.0, "preta", 25);
+            inferiors[pos].editar(inf, pos);
             return true;
         }
         return false;
     }
+    
     public boolean excluir(int i){
         if(i == qtdInferior[0] - 1){
             inferiors[i].setInferior(null, i);

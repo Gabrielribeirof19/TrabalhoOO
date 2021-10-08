@@ -17,14 +17,13 @@ public class ViewVenda implements ActionListener, ListSelectionListener{
 
     public void mostrarDados(ControllerVenda vendaV) {
         for(int i = 0; i < venda.qtdVenda[0]; i++){
-            listaVenda[i] = new ControllerVenda().getVenda(i).getNomeProduto();
+            listaVenda[i] = venda.getVenda(i).getNomeProduto();
         }
         listaVendaCadastrados = new JList<String>(listaVenda);
         janela = new JFrame("Vendas");
         titulo = new JLabel("Lista de Vendas");
         cadastroVenda = new JButton("Cadastrar");
         refreshVenda = new JButton("Recarregar");
-
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
         titulo.setBounds(90, 10, 250, 30);
         listaVendaCadastrados.setBounds(20, 50, 350, 120);
@@ -50,10 +49,8 @@ public class ViewVenda implements ActionListener, ListSelectionListener{
     }
 
     public void valueChanged(ListSelectionEvent e) {
-		Object src = e.getSource();
-
-		if(e.getValueIsAdjusting() && src == listaVendaCadastrados) {
-			new ViewDetailVenda().cadastrar(2, venda, this, listaVendaCadastrados.getSelectedIndex());
+		if(e.getValueIsAdjusting()) {
+			new ViewDetailVenda().cadastrar(2, venda, this, listaVendaCadastrados.getSelectedIndex(), null, null, null, null, null, null);
 		}
     }
 
@@ -61,7 +58,7 @@ public class ViewVenda implements ActionListener, ListSelectionListener{
 		Object src = e.getSource();
 		
 		if(src == cadastroVenda)
-			new ViewDetailVenda().cadastrar(1, venda, this, 0);
+			new ViewDetailVenda().cadastrar(1, venda, this, 0, ViewCliente.cliente, ViewCalcado.calcado, ViewInferior.inf, ViewCasaco.casaco, ViewVendedor.vendedor, ViewCamiseta.camiseta);
 
 		if(src == refreshVenda) {
 			for(int i = 0; i < venda.qtdVenda[0]; i++){
@@ -70,7 +67,6 @@ public class ViewVenda implements ActionListener, ListSelectionListener{
             listaVendaCadastrados.setListData(listaVenda);		
 			listaVendaCadastrados.updateUI();
 		}
-
 
 	}
     

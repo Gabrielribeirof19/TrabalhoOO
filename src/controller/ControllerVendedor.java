@@ -26,7 +26,7 @@ public class ControllerVendedor {
 
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdVendedor[0]){
-            Vendedor c = new Vendedor(256, 28, "cicero", "897875432", new Telefone("61", "902389089"), "akshaskjhadjkahs@gmail.com");
+            Vendedor c = new Vendedor(Integer.parseInt(dados[6]), Integer.parseInt(dados[7]), dados[1], dados[2], new Telefone(dados[4], dados[5]), dados[3]);
             vendedors[this.qtdVendedor[0]] = new Vendedor(256, 28, "cicero", "897875432", new Telefone("61", "902389089"), "akshaskjhadjkahs@gmail.com");
             vendedors[this.qtdVendedor[0]].editar(c, pos);
             return true;

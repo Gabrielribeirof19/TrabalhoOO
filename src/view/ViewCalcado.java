@@ -13,11 +13,26 @@ public class ViewCalcado implements ActionListener, ListSelectionListener{
     private JButton cadastroCalcado;
     private JButton refreshCalcado;
  	private String[] ListaCalcado = new String[50];
-    private static ControllerCalcado calcado = new ControllerCalcado();
+    static ControllerCalcado calcado = new ControllerCalcado();
     private JList<String> ListaCalcadoCadastrados;
+    private String[] dados = new String [11];
     
-    public void mostrarDados(ControllerCalcado calcadoC) {
-    
+    public void mostrarDados(ControllerCalcado calcadoC, int [] flag) {
+        if(flag[0] == 0){
+            for (int i = 0; i < 5; i++){
+                dados[1] = "Calcado"+i;
+                dados[2] = "23"+i;
+                dados[3] = "4"+i;
+                dados[4] = "5"+i;
+                dados[5] = "Azul";
+                dados[6] = ""+i;
+                dados[7] = "true";
+                dados[8] = "true";
+                calcado.cadastro(dados);
+            }
+            flag[0]++;
+        }
+
         for(int i = 0; i < calcado.qtdCalcado[0]; i++){
             ListaCalcado[i] = calcado.getCalcado(i).getNome();
         }
@@ -63,7 +78,6 @@ public class ViewCalcado implements ActionListener, ListSelectionListener{
                 ListaCalcado[i] = calcado.getCalcado(i).getNome();
             }
             ListaCalcadoCadastrados.setListData(ListaCalcado);
-
             ListaCalcadoCadastrados.updateUI();
         }
     }   

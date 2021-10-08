@@ -111,9 +111,8 @@ public class ViewDetailVendedor implements ActionListener{
 		if(src == botaoSalvar) {
 			try {
 				boolean res = true;
-				if(opc == 1)
-					novoDado[0] = Integer.toString(vendedor.getQtdVendedor());
-
+				
+				novoDado[0] = Integer.toString(vendedor.getQtdVendedor());
 				novoDado[1] = fieldNome.getText();
 				novoDado[2] = fieldCpf.getText();
 				novoDado[3] = fieldEmail.getText();
@@ -122,7 +121,11 @@ public class ViewDetailVendedor implements ActionListener{
                 novoDado[6] = fieldIdentificador.getText();
                 novoDado[7] = fieldNumeroDeVendas.getText();
 
-                res = vendedor.cadastro(novoDado);
+                if(opc == 2){
+                    res = vendedor.editar(novoDado, posi);
+                }else{
+                    res = vendedor.cadastro(novoDado);
+                }
 				if(res) {
 					mensagemSucessoCadastro();
 				}

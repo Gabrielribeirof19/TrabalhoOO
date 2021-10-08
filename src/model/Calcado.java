@@ -101,7 +101,6 @@ public class Calcado extends Produto{
 
     public void cadastrar(Calcado c, int[] i){
         this.calcado[i[0]] = c;
-        
     }
 
     public void editar(Calcado c, int pos){

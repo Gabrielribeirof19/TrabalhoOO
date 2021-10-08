@@ -13,11 +13,26 @@ public class ViewInferior implements ActionListener, ListSelectionListener{
     private JButton cadastroInferior;
     private JButton refreshInferior;
  	private String[] ListaInferior = new String[50];
-    private static ControllerInferior inf = new ControllerInferior();
+    static ControllerInferior inf = new ControllerInferior();
     JList<String> ListaInferiorCadastrados;
+    private String[] dados = new String[11];
     
-    public void mostrarDados(ControllerInferior inferiorC) {
-    
+    public void mostrarDados(ControllerInferior inferiorC, int [] flag) {
+        if (flag[0] == 0){
+            for (int i = 0; i < 5; i++){
+            dados[1] = "Inferior"+i;
+            dados[2] = "32"+i;
+            dados[3] = "4"+i;
+            dados[4] = "4."+i;
+            dados[5] = "Azul";
+            dados[6] = ""+i;
+            dados[7] = "Tipo"+i;
+            dados[8] = "Material"+i;
+            inf.cadastro(dados);
+        }
+        flag[0]++;
+    }
+        
         for(int i = 0; i < inf.qtdInferior[0]; i++){
          ListaInferior[i] = inf.getiInferior(i).getNome();
         }

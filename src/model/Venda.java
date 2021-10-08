@@ -15,6 +15,7 @@ public class Venda {
         this.preco = preco;
         this.nomeProduto = nomeProduto;
         this.idVenda = idVenda;
+        this.cashBack = cashBack;
     }
 
     public String toString(){

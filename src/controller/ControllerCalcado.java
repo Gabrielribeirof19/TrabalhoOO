@@ -26,9 +26,9 @@ public class ControllerCalcado {
 
     public boolean editar(String[] dados, int pos){
         if(pos >= 0 && pos <=this.qtdCalcado[0]){
-            Calcado c = new Calcado("Tenis1", 33.4, 40, 4.5, "cor", 4, true, true);
-            calcado[this.qtdCalcado[0]] = new Calcado("Tenis1", 320, 43, 5.4, "Azul", 5, true, true);
-            calcado[this.qtdCalcado[0]].editar(c, pos);
+            Calcado c = new Calcado(dados[1], Double.parseDouble(dados[2]), Integer.parseInt(dados[3]), Double.parseDouble(dados[4]), dados[5], Integer.parseInt(dados[6]), Boolean.parseBoolean(dados[7]), Boolean.parseBoolean(dados[8]));
+            calcado[pos] = new Calcado("Tenis1", 320, 43, 5.4, "Azul", 5, true, true);
+            calcado[pos].editar(c, pos);
             return true;
         }
         return false;

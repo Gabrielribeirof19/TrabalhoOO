@@ -13,11 +13,23 @@ public class ViewVendedor implements ActionListener, ListSelectionListener{
     private JButton cadastroVendedor;
     private JButton refreshVendedor;
  	private String[] ListaVendedor = new String[50];
-    private static ControllerVendedor vendedor = new ControllerVendedor();
+    static ControllerVendedor vendedor = new ControllerVendedor();
     JList<String> ListaVendedorCadastrados;
-    
-    public void mostrarDados(ControllerVendedor vendedorC) {
-    
+    private String [] dados = new String[11];
+    public void mostrarDados(ControllerVendedor vendedorC, int [] flag) {
+        if(flag[0] == 0){
+            for (int i = 0; i < 5; i++){
+                dados[1] = "Vendedor"+i;
+                dados[2] = "04582492399";
+                dados[3] = i+"email@email.com";
+                dados[4] = "061";
+                dados[5] = "999999999";
+                dados[6] = ""+i;
+                dados[7] = "3"+i;
+                vendedor.cadastro(dados);
+            }
+            flag[0]++;
+        }
         for(int i = 0; i < vendedor.qtdVendedor[0]; i++){
             ListaVendedor[i] = vendedor.getvVendedor(i).getNome();
         }
